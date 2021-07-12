@@ -16,21 +16,55 @@ body{
 }
 
 #app{
+    position: relative;
+    /* display: flex; */
+}
+
+.titlebar{
+    position: fixed;
     display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    z-index: 1;
 }
 
 .sidebar{
     display: none;
+    z-index: 1;
 }
 
 .content{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+     position: fixed;
+     top: 35px;
+     width: 100%;
+     z-index: 0;
 }
 
 @media screen and (min-width: 740px) {
     .sidebar{
         display: initial;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+    }
+
+    .titlebar{
+        position: fixed;
+        left: 300px;
+        right: 0;
+        width: auto;
+    }
+
+    .content{
+        position: fixed;
+        left: 48px;
+        width: calc(100% - 48px);
+    }
+
+    .content.active{
+        position: fixed;
+        left: 300px;
+        width: calc(100% - 300px);
     }
   }

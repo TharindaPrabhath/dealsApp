@@ -1,12 +1,14 @@
 .titlebar{
     padding: 0;
     margin: 0;
-    font-family: "agency-fb";
+    font-family: "agency-fb",sans-serif;
     letter-spacing: 1px;
     -webkit-app-region: drag;
+    background-color: black;
 }
 
 .titlebar__content{
+    width: 100%;
    display: flex;
    justify-content: space-between;
 }
