@@ -1,0 +1,32 @@
+.titlebar{
+    padding: 0;
+    margin: 0;
+    font-family: "agency-fb";
+    letter-spacing: 1px;
+}
+
+.titlebar__content{
+   display: flex;
+   justify-content: space-between;
+}
+
+.title{
+    background-color: blue;
+    padding: 0.5em 0.5em;
+    -webkit-app-region: drag;
+}
+
+.buttons>button{
+    padding: 0.5em 1.2em;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.buttons .close:hover{
+    background-color: rgb(211, 29, 29);
+}
+
+.buttons .maximize:hover,.buttons .restore-down:hover,.buttons .minimize:hover{
+    background-color: rgb(44, 44, 44);
+}
