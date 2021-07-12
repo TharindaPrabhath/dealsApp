@@ -3,6 +3,7 @@
     margin: 0;
     font-family: "agency-fb";
     letter-spacing: 1px;
+    -webkit-app-region: drag;
 }
 
 .titlebar__content{
@@ -11,9 +12,11 @@
 }
 
 .title{
-    background-color: blue;
-    padding: 0.5em 0.5em;
-    -webkit-app-region: drag;
+    padding: 0.5em 0.5em; 
+}
+
+.buttons{
+    -webkit-app-region: no-drag;
 }
 
 .buttons>button{

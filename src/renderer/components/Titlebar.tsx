@@ -7,18 +7,28 @@ import { VscChromeRestore as RestoreDown } from "react-icons/vsc";
 import { VscChromeMinimize as Minimize } from "react-icons/vsc";
 
 import "../components/Titlebar.css";
+import { useState } from "react";
 
 const Titlebar = () => {
+  const [maximize, setMaximize] = useState(false);
+
   const closeApp = () => {
     ipc.send("closeApp");
   };
 
+  const maximizeOrRestoreDownApp = () => {
+    if (maximize) restoreDownApp();
+    else maximizeApp();
+  };
+
   const maximizeApp = () => {
     ipc.send("maximizeApp");
+    setMaximize(true);
   };
 
   const restoreDownApp = () => {
     ipc.send("restoreDownApp");
+    setMaximize(false);
   };
 
   const minimizeApp = () => {
@@ -33,8 +43,12 @@ const Titlebar = () => {
           <button className="minimize" onClick={minimizeApp}>
             <Minimize size={16} color={"white"} />
           </button>
-          <button className="maximize" onClick={maximizeApp}>
-            <Maximize size={16} color={"white"} />
+          <button className={"maximize"} onClick={maximizeOrRestoreDownApp}>
+            {maximize ? (
+              <RestoreDown size={16} color={"white"} />
+            ) : (
+              <Maximize size={16} color={"white"} />
+            )}
           </button>
           <button className="close" onClick={closeApp}>
             <Close size={16} color={"white"} />
