@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { ipcRenderer as ipc } from "electron";
 
 import { VscChromeClose as Close } from "react-icons/vsc";
@@ -7,7 +8,6 @@ import { VscChromeRestore as RestoreDown } from "react-icons/vsc";
 import { VscChromeMinimize as Minimize } from "react-icons/vsc";
 
 import "../components/Titlebar.css";
-import { useState } from "react";
 
 const Titlebar = () => {
   const [maximize, setMaximize] = useState(false);

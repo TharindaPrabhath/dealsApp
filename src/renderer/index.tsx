@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Route } from "react-router-dom";
+import { useState } from "react";
 
 import "../assets/fonts/agency-fb.ttf";
 
@@ -13,7 +14,6 @@ import About from "./screens/About";
 import Home from "./screens/Home";
 import Settings from "./screens/Settings";
 import Store from "./screens/Store";
-import { useState } from "react";
 
 const App = () => {
   const [activeSidebar, setActiveSidebar] = useState(false);
@@ -21,9 +21,12 @@ const App = () => {
   return (
     <>
       <Router>
-        <Titlebar />
+        <div className={`titlebar-container ${activeSidebar ? "active" : ""}`}>
+          <Titlebar />
+        </div>
+
         <Sidebar
-          onCollapse={(activeSidebar: any) => {
+          onCollapse={(activeSidebar: boolean) => {
             console.log("Status: " + !activeSidebar);
             setActiveSidebar(!activeSidebar);
           }}

@@ -17,15 +17,12 @@ body{
 
 #app{
     position: relative;
-    /* display: flex; */
 }
 
-.titlebar{
+.titlebar-container{
     position: fixed;
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-    z-index: 1;
+    width: 100%;
+    z-index: 2;
 }
 
 .sidebar{
@@ -49,11 +46,16 @@ body{
         height: 100vh;
     }
 
-    .titlebar{
+    .titlebar-container{
+        position: fixed;
+        left: 48px;
+        width: calc(100% - 48px);
+    }
+
+    .titlebar-container.active{
         position: fixed;
         left: 300px;
-        right: 0;
-        width: auto;
+        width: calc(100% - 300px);
     }
 
     .content{
