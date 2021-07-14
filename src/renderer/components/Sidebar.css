@@ -49,14 +49,14 @@
 
 .sidebar.active{
     width: 300px;
+    transition: all 1s;
 }
 
 .sidebar.active .app-title{
     padding: 0.5em;
     display: initial;
     font-size: 0.8em;
-    width: 300px;
-    background-color: red;
+    width: 100%;
     -webkit-app-region: drag; 
 }
 
