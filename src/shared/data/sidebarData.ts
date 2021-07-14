@@ -1,44 +1,61 @@
 import * as AiIcon from "react-icons/ai";
-import * as FaIcon from "react-icons/fa";
+import { IconType } from "react-icons/lib";
 
-const iconColor: string = "white";
-const iconSize: number = 24;
+const TAB_CLASS_NAME = "sidebar-tab"
+const ICON_COLOR = "white";
+const ICON_SIZE = 24;
 
-export const topSectionData = [
-  {
-    title: "Home",
-    path: "/",
-    icon: AiIcon.AiFillHome,
-    iconColor: iconColor,
-    iconSize: iconSize,
-    cName: "sidebar-tab",
-  },
-  {
-    title: "Store",
-    path: "/store",
-    icon: FaIcon.FaStore,
-    iconColor: iconColor,
-    iconSize: iconSize,
-    cName: "sidebar-tab",
+interface SidebarTabProps {
+  cName:string;
+  title:string;
+  path:string;
+  icon:{
+    name:IconType;
+    color:string;
+    size:number;
+  };
 }
-]
 
-export const bottomSectionData = [
-  {
-    title: "Settings",
-    path: "/settings",
-    icon: AiIcon.AiFillSetting,
-    iconColor: iconColor,
-    iconSize: iconSize,
-    cName: "sidebar-tab",
-  },
-  {
-    title: "About Us",
-    path: "/about",
-    icon: AiIcon.AiFillInfoCircle,
-    iconColor: iconColor,
-    iconSize: iconSize,
-    cName: "sidebar-tab",
-  },
-]
+export const Home:SidebarTabProps = {
+  cName: TAB_CLASS_NAME,
+  title: "Home",
+  path: "/",
+  icon:{
+    name:AiIcon.AiFillHome,
+    color: ICON_COLOR,
+    size: ICON_SIZE
+  }
+}
 
+export const Store:SidebarTabProps = {
+  cName: TAB_CLASS_NAME,
+  title: "Store",
+  path: "/store",
+  icon:{
+    name:AiIcon.AiFillShop,
+    color: ICON_COLOR,
+    size: ICON_SIZE
+  }
+}
+
+export const Settings:SidebarTabProps = {
+  cName: TAB_CLASS_NAME,
+  title: "Settings",
+  path: "/settings",
+  icon:{
+    name:AiIcon.AiFillSetting,
+    color: ICON_COLOR,
+    size: ICON_SIZE
+  }
+}
+
+export const About:SidebarTabProps = {
+  cName: TAB_CLASS_NAME,
+  title: "About",
+  path: "/about",
+  icon:{
+    name:AiIcon.AiFillInfoCircle,
+    color: ICON_COLOR,
+    size: ICON_SIZE
+  }
+}
