@@ -9,7 +9,11 @@ import { VscChromeMinimize as Minimize } from "react-icons/vsc";
 
 import "../components/Titlebar.css";
 
-const Titlebar = () => {
+interface TitlebarProps {
+  showAppTitle: any;
+}
+
+const Titlebar = (props: React.PropsWithChildren<TitlebarProps>) => {
   const [maximize, setMaximize] = useState(false);
 
   const closeApp = () => {
@@ -38,7 +42,14 @@ const Titlebar = () => {
   return (
     <div className="titlebar">
       <div className="titlebar__content">
-        <div className="title">Deals App</div>
+        {/* {props.showAppTitle ? <div className="title">Deals App</div> : <></>} */}
+        <div
+          className="title"
+          style={props.showAppTitle ? { opacity: 1 } : { opacity: 0 }}
+        >
+          Deals App
+        </div>
+
         <div className="buttons">
           <button className="minimize" onClick={minimizeApp}>
             <Minimize size={16} color={"white"} />
