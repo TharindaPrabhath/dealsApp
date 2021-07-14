@@ -18,16 +18,20 @@ import Store from "./screens/Store";
 const App = () => {
   const [activeSidebar, setActiveSidebar] = useState(false);
 
+  const getStatus = () => {
+    if (window.innerWidth > 740) {
+      if (activeSidebar) return false;
+      else return true;
+    } else return true;
+  };
+
   return (
     <>
       <Router>
-        <div className={`titlebar-container ${activeSidebar ? "active" : ""}`}>
-          <Titlebar />
-        </div>
+        <Titlebar showAppTitle={!activeSidebar} />
 
         <Sidebar
           onCollapse={(activeSidebar: boolean) => {
-            console.log("Status: " + !activeSidebar);
             setActiveSidebar(!activeSidebar);
           }}
         />

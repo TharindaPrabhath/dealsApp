@@ -44,15 +44,16 @@ body{
         top: 0;
         left: 0;
         height: 100vh;
+        transition: all 1s ease-in;
     }
 
-    .titlebar-container{
+    .titlebar{
         position: fixed;
         left: 48px;
-        width: calc(100% - 48px);
+        width: calc(100% - 48px);       
     }
 
-    .titlebar-container.active{
+    .titlebar.active{
         position: fixed;
         left: 300px;
         width: calc(100% - 300px);
@@ -62,11 +63,13 @@ body{
         position: fixed;
         left: 48px;
         width: calc(100% - 48px);
+        transition: left 300ms ease;
     }
 
     .content.active{
         position: fixed;
         left: 300px;
         width: calc(100% - 300px);
+        /* transition: left 300ms ease-in; */
     }
   }
