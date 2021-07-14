@@ -7,13 +7,14 @@
 }
 
 .titlebar__content{
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-   display: flex;
-   justify-content: space-between;
 }
 
 .title{
     padding: 0.5em 0.5em; 
+    pointer-events: none;
 }
 
 .buttons{
