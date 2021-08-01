@@ -1,3 +1,6 @@
+import { defaultStore } from "../data/stores";
+import Store from "./Store";
+
 interface Game{
     title: string;
     thumbnail: string;
@@ -5,7 +8,7 @@ interface Game{
     normalPrice: string;
     salePrice: string;
     discount: string;
-    storeID: string;
+    store: Store;
     dealID: string;             // To redirect for the relevant store site
     metacriticScore: string;
 }
@@ -20,7 +23,7 @@ export const sampleGame: Game[] = [
         normalPrice: "7.99",
         salePrice: "1.19",
         discount: "85",
-        storeID: "",
+        store: defaultStore,
         dealID: "",
         metacriticScore: "69"
     }
