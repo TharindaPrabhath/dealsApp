@@ -1,6 +1,6 @@
 import Store from "../types/Store";
 
-import { SteamIcon, GogIcon, OriginIcon, FanaticalIcon, UplayIcon, HumbleIcon } from "../../assets";
+import { SteamIcon, GogIcon, OriginIcon, FanaticalIcon, UplayIcon, HumbleIcon, DefaultStoreIcon } from "../../assets";
 
 const Stores: Store[] = [
     {
@@ -33,6 +33,12 @@ const Stores: Store[] = [
         name: "Fanatical",
         icon: FanaticalIcon
     }     
-]
+];
+
+export const defaultStore: Store = {
+    id: 0,
+    name: "-",
+    icon: DefaultStoreIcon
+}
 
 export default Stores;
