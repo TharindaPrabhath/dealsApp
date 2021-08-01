@@ -4,15 +4,17 @@
 }
 
 .gamecell{
+    position: relative;
+    /* height: 50px; */
     font-family: Arial, Helvetica, sans-serif;
     background-color: #3F4A63;
     padding: 1em;
     transition: 200ms;
 }
 
-.gamecell:hover{
+/* .gamecell:hover{
     transform: scale(1.01);
-}
+} */
 
 .gamecell__content{
     display: flex;
@@ -24,19 +26,21 @@
     display: flex;
 }
 
-.gamecell .title{
-    font-size: 1.3em;
+.gamecell .description{
+    margin-left: 0.8em;
 }
 
-.gamecell .title:hover{
-    background-color: red;
-    cursor: pointer;
+.gamecell .game-title{
+    font-size: 1.6em;
+    font-family: "agency-fb", sans-serif;
+}
+
+.gamecell .game-title:hover{
     text-decoration: underline;
 }
 
 .gamecell .release-date{
     margin-top: 0.6em;
-     margin-left: 1em;
      font-size: 0.8em;
      font-weight: 300;
 }
@@ -46,14 +50,18 @@
     align-items: center;
 }
 
-.gamecell__content .middle label{
+.gamecell__content .middle .discount{
     margin-left: 2em;
-    background-image: linear-gradient(#52D963, rgba(0,0,0,0.4));
     padding: 0.3em 0.5em;
+}
+
+.metacritic-score{
+    display: none;
 }
 
 .gamecell .normal-price{
     font-size: 0.8em;
+    color: darkgray;
     font-weight: 300;
     margin-bottom: 0.5em;
     text-decoration: line-through;
@@ -68,5 +76,30 @@
 @media only screen and (max-width: 490px) {
     .discount{
         display: none;
+    }
+}
+
+@media only screen and (min-width: 1020px) {
+    .discount{
+        position: absolute;
+        right: 7em;
+    }
+
+    .gamecell .middle .metacritic-score{
+        display: flex; 
+        align-items: center;
+    }
+    
+    .metacritic-score img{
+        width: 100px;
+    }
+
+    .metacritic-score label{
+        font-family: "agency-fb", sans-serif;
+        font-size: 1.1em;
+        margin-left: -1em;
+        background-color: rgb(160, 132, 10);
+        padding: 0.2em 0.4em;
+        border-radius: 2px;
     }
 }
