@@ -1,0 +1,3 @@
+export const HIGHER_SCORE_LOWEST_VALUE = 75;
+export const MIDDLE_SCORE_LOWEST_VALUE = 50;
+export const LOWER_SCORE_LOWEST_VALUE = 0;
